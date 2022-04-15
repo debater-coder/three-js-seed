@@ -19,7 +19,7 @@ export default class Experience {
         this.update = this.update.bind(this)
 
         // Sizing
-        this.resizer = new Resizer(this.resize)
+        this.resizer = new Resizer(this.resize, canvas)
 
         // Time
         this.time = new Time(this.update)
