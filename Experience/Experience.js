@@ -5,6 +5,7 @@ import Resizer from "./Resizer";
 import Camera from "./Camera";
 import Renderer from "./Renderer";
 import Time from "./Time";
+import Resources from "./Resources";
 
 export default class Experience {
     constructor({ canvas, fov=35, useOrbitControls=true }) {
@@ -35,6 +36,9 @@ export default class Experience {
 
         // Debug
         this.gui = new dat.GUI()
+
+        // Resources
+        this.resources = new Resources()
     }
 
     resize() {

@@ -22,11 +22,15 @@ class App extends Experience {
         this.sun.position.set(3.5, 2, -1.25)
         this.scene.add(this.sun)
 
-        this.cube = new THREE.Mesh(
-            new THREE.BoxGeometry(),
-            new THREE.MeshStandardMaterial()
-        )
-        this.scene.add(this.cube)
+        this.resources.startLoading([
+            {
+                name: "boat",
+                type: "gltfModel",
+                path: "/boat_josefa/scene.gltf"
+            }
+        ]).then(() => {
+            this.scene.add(this.resources.items["boat"].scene)
+        })
     }
 
 }
