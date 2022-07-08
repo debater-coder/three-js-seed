@@ -23,10 +23,9 @@ class App extends Experience {
         this.scene.add(this.sun)
 
         this.cube = new THREE.Mesh(
-            new THREE.BoxGeometry(1, 1, 1),
+            new THREE.BoxGeometry(),
             new THREE.MeshStandardMaterial()
         )
-        this.cube.rotation.x = -Math.PI / 2
         this.scene.add(this.cube)
     }
 
