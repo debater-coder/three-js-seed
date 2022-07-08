@@ -7,6 +7,14 @@ export default class Renderer {
       canvas: canvas,
       antialias: true,
     });
+
+    this.instance.physicallyCorrectLights = true;
+    this.instance.outputEncoding = THREE.sRGBEncoding;
+    this.instance.toneMapping = THREE.CineonToneMapping;
+    this.instance.toneMappingExposure = 1.75;
+    this.instance.shadowMap.enabled = true;
+    this.instance.shadowMap.type = THREE.PCFSoftShadowMap;
+
     this.instance.setPixelRatio(this.resizer.pixelRatio);
     this.instance.setSize(this.resizer.width, this.resizer.height, false);
   }

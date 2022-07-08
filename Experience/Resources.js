@@ -21,19 +21,34 @@ export default class Resources {
       for (const source of this.sources) {
         switch (source.type) {
           case "gltfModel":
-            this.loaders.gltfLoader.load(source.path, (file) => {
-              this.sourceLoaded(source, file, resolve);
-            });
+            this.loaders.gltfLoader.load(
+              source.path,
+              (file) => {
+                this.sourceLoaded(source, file, resolve);
+              },
+              undefined,
+              (error) => reject(error)
+            );
             break;
           case "texture":
-            this.loaders.textureLoader.load(source.path, (file) => {
-              this.sourceLoaded(source, file, resolve);
-            });
+            this.loaders.textureLoader.load(
+              source.path,
+              (file) => {
+                this.sourceLoaded(source, file, resolve);
+              },
+              undefined,
+              (error) => reject(error)
+            );
             break;
           case "cubeTexture":
-            this.loaders.cubeTextureLoader.load(source.path, (file) => {
-              this.sourceLoaded(source, file, resolve);
-            });
+            this.loaders.cubeTextureLoader.load(
+              source.path,
+              (file) => {
+                this.sourceLoaded(source, file, resolve);
+              },
+              undefined,
+              (error) => reject(error)
+            );
             break;
         }
       }

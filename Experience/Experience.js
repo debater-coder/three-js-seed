@@ -58,4 +58,16 @@ export default class Experience {
     this._camera.update();
     this.renderer.render(this.scene, this.camera);
   }
+  applyEnvironmentMap(texture, intensity) {
+    this.scene.traverse((child) => {
+      if (
+        child instanceof THREE.Mesh &&
+        child.material instanceof THREE.MeshStandardMaterial
+      ) {
+        child.material.envMap = texture;
+        child.material.envMapIntensity = intensity;
+        child.material.needsUpdate = true;
+      }
+    });
+  }
 }
