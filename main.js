@@ -22,12 +22,12 @@ class App extends Experience {
         this.sun.position.set(3.5, 2, -1.25)
         this.scene.add(this.sun)
 
-        this.floor = new THREE.Mesh(
+        this.cube = new THREE.Mesh(
             new THREE.BoxGeometry(1, 1, 1),
             new THREE.MeshStandardMaterial()
         )
-        this.floor.rotation.x = -Math.PI / 2
-        this.scene.add(this.floor)
+        this.cube.rotation.x = -Math.PI / 2
+        this.scene.add(this.cube)
     }
 
 }

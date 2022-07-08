@@ -7,7 +7,7 @@ export default class Renderer {
             canvas: canvas,
             antialias: true
         })
-        this.instance.setPixelRatio(Math.min(this.resizer.pixelRatio, 2))
+        this.instance.setPixelRatio(this.resizer.pixelRatio)
         this.instance.setSize(this.resizer.width, this.resizer.height, false)
     }
 
